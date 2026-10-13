@@ -2,7 +2,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
-int number = "hello";
 
 if (app.Environment.IsDevelopment())
 {
@@ -13,7 +12,7 @@ if (app.Environment.IsDevelopment())
 var tasks = new List<TaskItem>();
 var nextId = 1;
 
-app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
+app.MapGet("/healthz", () => Results.Ok(new { status = "healthy" }));
 
 app.MapGet("/api/tasks", () => tasks);
 

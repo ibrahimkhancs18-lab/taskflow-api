@@ -12,8 +12,7 @@ if (app.Environment.IsDevelopment())
 var tasks = new List<TaskItem>();
 var nextId = 1;
 
-app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
-
+app.MapGet("/health", () => Results.Ok(new { status = "healthy", version = "v2" }));
 app.MapGet("/api/tasks", () => tasks);
 
 app.MapGet("/api/tasks/{id:int}", (int id) =>

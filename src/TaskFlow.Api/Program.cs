@@ -12,7 +12,7 @@ if (app.Environment.IsDevelopment())
 var tasks = new List<TaskItem>();
 var nextId = 1;
 
-app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
+app.MapGet("/healthz", () => Results.Ok(new { status = "healthy" }));
 
 app.MapGet("/api/tasks", () => tasks);
 
